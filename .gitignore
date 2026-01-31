@@ -1,0 +1,70 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+pip-log.txt
+pip-delete-this-directory.txt
+Pipfile.lock
+poetry.lock
+__pycache__/
+*.egg-info/
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.sublime-project
+.sublime-workspace
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# Testing
+.pytest_cache/
+.coverage
+.nyc_output/
+coverage/
+htmlcov/
+
+# Build outputs
+dist/
+build/
+*.o
+*.so
+*.dylib
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Compiled files
+*.pyc
+*.pyo
+*.class
+*.jar
+
+# Misc
+.cache/
+*.pid
+*.seed
