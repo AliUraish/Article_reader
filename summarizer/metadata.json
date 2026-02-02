@@ -1,0 +1,5 @@
+{
+  "name": "Summarizer",
+  "description": "A minimalist article summarizer focused on clarity and readability.",
+  "requestFramePermissions": []
+}
