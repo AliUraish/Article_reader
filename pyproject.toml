@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "Article summarization API and CLI"
 requires-python = ">=3.10"
 dependencies = [
-  "agentbay @ git+https://github.com/AgentBay-AI/agentbay-python-sdk.git@b318baccbf9cf31f163ad3a5b847c28138c28a39",
   "aiohappyeyeballs==2.6.1",
   "aiohttp==3.13.2",
   "aiosignal==1.4.0",
