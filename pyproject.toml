@@ -76,5 +76,8 @@ dependencies = [
   "google-generativeai==0.8.3",
 ]
 
+[project.scripts]
+app = "app:app"
+
 [project.optional-dependencies]
 dev = []
