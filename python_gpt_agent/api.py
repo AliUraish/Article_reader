@@ -22,10 +22,13 @@ from main import extract_content, summarize_text
 # Initialize FastAPI app
 app = FastAPI(title="Article Summarization API")
 
-# Configure CORS for frontend
+# Configure CORS for frontend (comma-separated origins in CORS_ORIGINS)
+cors_origins_env = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://localhost:3000")
+cors_origins = [origin.strip() for origin in cors_origins_env.split(",") if origin.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],  # Vite and common React ports
+    allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
