@@ -20,13 +20,20 @@ from openai import OpenAI
 import json
 from opentelemetry import trace
 from opentelemetry.trace import SpanKind
+from dotenv import load_dotenv
 
-#import agentbay
-#from agentbay.llms import openai as agentbay_openai
+# Load environment variables from .env file
+load_dotenv()
 
-# Initialize AgentBay (works with or without API key) and instrument OpenAI once
-#agentbay.init(api_key=os.getenv("AGENTBAY_API_KEY"))
-#agentbay_openai.instrument()
+# AgentBasis SDK for observability and tracing
+import agentbasis
+from agentbasis.llms.openai import instrument as instrument_openai
+
+# Initialize AgentBasis SDK (reads from AGENTBASIS_API_KEY and AGENTBASIS_AGENT_ID env vars)
+agentbasis.init()
+
+# Instrument OpenAI - all calls will now be tracked
+instrument_openai()
 
 def parse_arguments() -> Tuple[Optional[str], Optional[str], str, int, str, bool]:
     """Parse command-line arguments."""
