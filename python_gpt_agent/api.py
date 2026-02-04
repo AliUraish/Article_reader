@@ -195,6 +195,9 @@ async def summarize_article(request: SummarizeRequest):
         else:
             raise HTTPException(status_code=400, detail="Invalid model selection")
         
+        # Flush AgentBasis data before returning (important for serverless)
+        agentbasis.flush()
+        
         return SummarizeResponse(summary=summary)
     except HTTPException:
         raise
