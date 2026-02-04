@@ -16,6 +16,18 @@ from openai import OpenAI
 # Load environment variables from .env file
 load_dotenv()
 
+# AgentBasis SDK for observability and tracing
+import agentbasis
+from agentbasis.llms.openai import instrument as instrument_openai
+from agentbasis.llms.gemini import instrument as instrument_gemini
+
+# Initialize AgentBasis SDK (reads from AGENTBASIS_API_KEY and AGENTBASIS_AGENT_ID env vars)
+agentbasis.init()
+
+# Instrument both LLM providers - all calls will now be tracked
+instrument_openai()
+instrument_gemini()
+
 # Import extraction functions from main.py
 from main import extract_content, summarize_text
 
