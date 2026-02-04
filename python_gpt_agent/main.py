@@ -25,16 +25,6 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# AgentBasis SDK for observability and tracing
-import agentbasis
-from agentbasis.llms.openai import instrument as instrument_openai
-
-# Initialize AgentBasis SDK (reads from AGENTBASIS_API_KEY and AGENTBASIS_AGENT_ID env vars)
-agentbasis.init()
-
-# Instrument OpenAI - all calls will now be tracked
-instrument_openai()
-
 def parse_arguments() -> Tuple[Optional[str], Optional[str], str, int, str, bool]:
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
